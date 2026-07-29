@@ -3,23 +3,14 @@ import canonicalLaneMathlib.AdmissibleClass
 namespace HautevilleHouse
 namespace LinearFormsLogarithmsBakerSFoundationCanonicalLaneLean
 
-structure LinearFormLogAdmittedObject where
-  linearForm : Type u
-  field : Type v
-  charZero : Prop
-  logarithmsIndependent : Prop
-  bakerBound : ℕ
-  lowerBoundEstablished : Prop
-  lowerBoundEstablishedTerm : lowerBoundEstablished
-
-structure AdmissibleClass where
-  object : LinearFormLogAdmittedObject
+structure LinearFormsAdmissibleClass where
+  object : LinearFormPackage
   endpointSatisfied : Prop
   remainderRecorded : Prop
   gateWitness : endpointSatisfied ∨ remainderRecorded
 
-def admittedClosure (A : AdmissibleClass) : Prop :=
-  LinearFormLogWitnessClosed A.object ∧ (A.endpointSatisfied ∨ A.remainderRecorded)
+def admittedClosure (A : LinearFormsAdmissibleClass) : Prop :=
+  BakerLinearFormClosed A.object ∧ (A.endpointSatisfied ∨ A.remainderRecorded)
 
 end LinearFormsLogarithmsBakerSFoundationCanonicalLaneLean
 end HautevilleHouse

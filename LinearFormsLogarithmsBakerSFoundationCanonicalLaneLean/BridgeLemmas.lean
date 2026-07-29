@@ -1,14 +1,14 @@
-import linearFormsLogarithmsBakerSFoundationCanonicalLaneLean.AdmissibleClass
+import canonicalLaneMathlib.AdmissibleClass
 
 namespace HautevilleHouse
 namespace LinearFormsLogarithmsBakerSFoundationCanonicalLaneLean
 
 def bridgeClosed (A : AdmissibleClass) : Prop :=
-  LinearFormLogWitnessClosed A.object
+  BakerLinearFormClosed A.object
 
 theorem bridge_from_admissible_class (A : AdmissibleClass) :
     bridgeClosed A := by
-  exact A.object.lowerBoundEstablishedTerm
+  exact A.object.conclusion
 
 end LinearFormsLogarithmsBakerSFoundationCanonicalLaneLean
 end HautevilleHouse
