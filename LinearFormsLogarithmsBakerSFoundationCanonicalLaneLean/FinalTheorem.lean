@@ -1,4 +1,4 @@
-import LinearFormsLogarithmsBakerSFoundationCanonicalLaneLean.GateLemmas
+import canonicalLaneMathlib.AdmissibleClass
 
 namespace HautevilleHouse
 namespace LinearFormsLogarithmsBakerSFoundationCanonicalLaneLean

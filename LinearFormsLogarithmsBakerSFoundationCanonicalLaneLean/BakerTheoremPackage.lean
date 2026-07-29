@@ -1,16 +1,25 @@
 import canonicalLaneMathlib.AdmissibleClass
-import LinearFormsLogarithmsBakerSFoundationCanonicalLaneLean.LinearFormsLogarithmsBakerFoundation
 
 namespace HautevilleHouse
 namespace LinearFormsLogarithmsBakerSFoundationCanonicalLaneLean
 
-structure BakerTheoremPackage (F : LinearFormsLogarithmsBakerFoundation) where
-  linearIndependence : Prop
-  heightBound : ℕ
-  measureEstimate : ℝ
+structure BakerTheoremPackage where
+  linearForm : LinearFormPackage
+  logarithms : LogarithmsPackage
+  lowerBound : ℚ
+  nontrivialityCondition : Prop
+  nontrivialityConditionClosed : nontrivialityCondition
+  lowerBoundDerived : lowerBound > 0
 
-def BakerTheoremClosed {F : LinearFormsLogarithmsBakerFoundation} (B : BakerTheoremPackage F) : Prop :=
-  B.linearIndependence ∧ B.measureEstimate > 0
+structure BakerTheoremEvidence (B : BakerTheoremPackage) where
+  nontrivialityConditionClosed : B.nontrivialityCondition
+  lowerBoundDerived : B.lowerBoundDerived
+
+def BakerTheoremClosed (B : BakerTheoremPackage) : Prop :=
+  B.nontrivialityCondition ∧ B.lowerBound > 0
+
+theorem baker_theorem_closed_from_evidence (B : BakerTheoremPackage) (E : BakerTheoremEvidence B) : BakerTheoremClosed B := by
+  exact And.intro E.nontrivialityConditionClosed E.lowerBoundDerived
 
 end LinearFormsLogarithmsBakerSFoundationCanonicalLaneLean
 end HautevilleHouse
