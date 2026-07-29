@@ -1,4 +1,4 @@
-import linearFormsLogarithmsBakerSFoundationCanonicalLaneLean.BridgeLemmas
+import LinearFormsLogarithmsBakerSFoundationCanonicalLaneLean.BridgeLemmas
 
 namespace HautevilleHouse
 namespace LinearFormsLogarithmsBakerSFoundationCanonicalLaneLean
